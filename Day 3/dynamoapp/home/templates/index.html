@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Dynamoapp</title>
+    <style>
+        .options {
+            display: flex;
+            gap: 12px;
+            justify-content: start;
+            align-items: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Anonymous Test -1</h1>
+    {% for j in questions %}
+    <div>
+        <span>{{forloop.counter}}. </span>{{j.question}}
+    </div>
+    {% for i in j.options %}
+    <div class="options">
+        <input type="radio" name="answer-{{forloop.parentloop.counter}}"
+            id="q-{{forloop.parentloop.counter}}-{{forloop.counter}}">
+        <label for="q-{{forloop.parentloop.counter}}-{{forloop.counter}}">{{i | capfirst}}</label>
+    </div>
+    {% endfor %}
+    <br>
+    {% endfor %}
+</body>
+
+</html>
