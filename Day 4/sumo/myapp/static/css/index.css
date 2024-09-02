@@ -1,0 +1,86 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 15px 0;
+    text-align: justify;
+}
+
+/* A4 styling */
+.content {
+    width: 120mm;
+    height: 200mm;
+    background-color: white;
+    padding: 20mm;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 110mm;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 20mm;
+    right: 20mm;
+    font-size: 14px;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Print adjustments */
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .content {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    header, footer {
+        position: static;
+        margin: 0;
+    }
+
+    img {
+        margin-bottom: 10mm;
+    }
+}
