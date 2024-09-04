@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+    <style>
+        body {
+            font-size: 14px;
+            font-family: serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            justify-content: stretch;
+        }
+
+        .form {
+            font-size: 24px;
+            background-color: rgb(255, 4, 46);
+            color: white;
+            font-weight: 700;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .form div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            margin: 10px;
+        }
+        .form div.btn-group{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            
+        }
+        .form div input{
+            padding: 5px;
+            font-size: 18px;
+        }
+        .form div.btn-group input{
+            background-color: green;
+            color: white;
+            border-radius: 12px;
+        }
+        </style>
+</head>
+
+<body>
+    <div class="title">
+        <h1>This is Home Page</h1>
+    </div>
+    <div class="form">
+        <form action="{% url 'mlapp:result' %}" method="post">
+            {% csrf_token %}
+            <div><span>RI:</span> <input type="text" name="RI"></div>
+            <div><span>Na:</span> <input type="text" name="Na"></div>
+            <div><span>Mg:</span> <input type="text" name="Mg"></div>
+            <div><span>Al:</span> <input type="text" name="Al"></div>
+            <div><span>Si:</span> <input type="text" name="Si"></div>
+            <div><span>K:</span> <input type="text" name="K"></div>
+            <div><span>Ca:</span> <input type="text" name="Ca"></div>
+            <div><span>Ba:</span> <input type="text" name="Ba"></div>
+            <div><span>Fe:</span> <input type="text" name="Fe"></div>
+            <div class="btn-group">
+                <input type="submit" value="Predict">
+                <input type="reset" value="Clear">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
